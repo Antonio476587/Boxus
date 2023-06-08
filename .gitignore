@@ -2,7 +2,7 @@
 
 # Sensitive Files
 /server/supabase/functions/_shared/config.ts
-/frontend/src/environments/*
+.env
 
 # Compiled output
 /dist
