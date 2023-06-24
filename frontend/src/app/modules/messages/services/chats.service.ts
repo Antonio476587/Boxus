@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, take, tap } from 'rxjs';
 import { ChatData } from '../models/Chat';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { AuthService } from '../../../services/auth.service';
 
 @Injectable({
