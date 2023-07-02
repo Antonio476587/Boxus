@@ -11,8 +11,16 @@
     <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum sapiente tempore laudantium quam vero delectus. Vero facere ipsum perferendis dolorem temporibus. Natus pariatur facere dignissimos id! Sapiente nesciunt omnis amet ipsum vitae ipsam iure ratione reiciendis facere modi, maiores alias, nihil quos tempora? Cupiditate minima quia voluptas. Tempore, maxime officiis!</p>
     <p class="msg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum sapiente tempore laudantium quam vero delectus. Vero facere ipsum perferendis dolorem temporibus. Natus pariatur facere dignissimos id! Sapiente nesciunt omnis amet ipsum vitae ipsam iure ratione reiciendis facere modi, maiores alias, nihil quos tempora? Cupiditate minima quia voluptas. Tempore, maxime officiis!</p>
   </div>
-  <form class="card-footer input-group" (submit)="ngSendMsg($event)">
-    <textarea type="text" class="form-control" placeholder="Escribe un mensaje..." (keyup.enter)="ngSendMsg($event)"></textarea>
+  <form class="card-footer input-group" (submit)="ngSendMsg()">
+    <textarea 
+      type="text"
+      class="form-control"
+      placeholder="Escribe un mensaje..."
+      [(ngModel)]="messageContent"
+      [ngModelOptions]="{standalone: true}"
+      (keyup.enter)="ngSendMsg()"
+    ></textarea>
+
     <button class="btn" type="submit"><img src="/assets/icons/send-btn.png"></button>
   </form>
 </div>
