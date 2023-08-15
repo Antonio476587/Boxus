@@ -21,7 +21,7 @@
     "@ng-bootstrap/ng-bootstrap": "^14.0.1",
     "@ngx-env/builder": "^16.1.2",
     "@popperjs/core": "^2.11.6",
-    "@supabase/supabase-js": "^2.10.0",
+    "@supabase/supabase-js": "^2.32.0",
     "bootstrap": "^5.2.3",
     "dotenv": "^16.1.4",
     "ng-process-env": "^16.0.6",
