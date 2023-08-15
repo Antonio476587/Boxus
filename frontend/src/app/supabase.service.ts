@@ -4,6 +4,7 @@ import {
   AuthChangeEvent,
   AuthSession,
   createClient,
+  RealtimeChannel,
   Session,
   SupabaseClient,
   User,
@@ -24,6 +25,7 @@ export interface Profile {
 })
 export class SupabaseService {
   private supabase: SupabaseClient;
+  private supabaseRealtime: SupabaseClient;
   _session: AuthSession | null = null;
 
   constructor(
@@ -33,6 +35,10 @@ export class SupabaseService {
     this.supabase = createClient(
       environment.supabaseUrl,
       environment.supabaseKey
+    );
+    this.supabaseRealtime = createClient(
+      environment.supabaseRealtimeUrl,
+      environment.supabaseRealtimeKey
     );
   }
 
@@ -119,5 +125,9 @@ export class SupabaseService {
     return this.httpClient.post(environment.supabaseEndpointImg, file, {
       responseType: 'text',
     });
+  }
+
+  createChannel(): RealtimeChannel {
+    return this.supabaseRealtime.channel("room-1")
   }
 }
